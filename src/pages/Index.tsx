@@ -1,14 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from "react";
+import PasswordGate from "./PasswordGate";
+import Birthday from "./Birthday";
 
 const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isChecking, setIsChecking] = useState(true);
+
+  useEffect(() => {
+    const auth = localStorage.getItem("birthday-authenticated");
+    if (auth === "true") {
+      setIsAuthenticated(true);
+    }
+    setIsChecking(false);
+  }, []);
+
+  if (isChecking) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-romantic">
+        <div className="text-accent text-2xl">جاري التحميل...</div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <PasswordGate onSuccess={() => setIsAuthenticated(true)} />;
+  }
+
+  return <Birthday />;
 };
 
 export default Index;
