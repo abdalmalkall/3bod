@@ -7,12 +7,12 @@ const GallerySection = () => {
 
   // صور تجريبية - يمكن استبدالها بصور حقيقية
   const images = [
-    "./public/0e6cf217-b650-45f2-958c-261dc2f6bbe0.jpg",
-    "./public/82eed783-860e-45e1-af5d-f04e32814f05.jpg",
-    "./public/b48f7785-a367-429d-8890-7c41441f5ac4.jpg",
-    "./public/bca0b6c9-dfa4-4e7d-8dc5-768f5538161c.jpg",
-    "./public/eb4b2abb-8401-4cda-a2d1-5e43c719feba.jpg",
-    "./public/roro.png",
+    "/0e6cf217-b650-45f2-958c-261dc2f6bbe0.jpg",
+    "/82eed783-860e-45e1-af5d-f04e32814f05.jpg",
+    "/b48f7785-a367-429d-8890-7c41441f5ac4.jpg",
+    "/bca0b6c9-dfa4-4e7d-8dc5-768f5538161c.jpg",
+    "/eb4b2abb-8401-4cda-a2d1-5e43c719feba.jpg",
+    "/roro.png",
   ];
 
   return (
