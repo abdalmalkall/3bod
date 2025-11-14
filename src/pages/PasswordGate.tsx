@@ -92,12 +92,7 @@ const PasswordGate = ({ onSuccess }: PasswordGateProps) => {
     }
   }, []);
 
-  const getHint = () => {
-    if (attempts >= 3) {
-      return "💡 تلميح: اسم المدينة + السنة + المناسبة بالانجليزي";
-    }
-    return "💡 تلميح: فكري في مكان مميز وسنة خاصة ومناسبة جميلة";
-  };
+  
 
   const getRemainingTime = () => {
     const lastFailedAttempt = localStorage.getItem("last-failed-attempt");
@@ -171,24 +166,20 @@ const PasswordGate = ({ onSuccess }: PasswordGateProps) => {
               >
                 {isLoading ? "جاري التحقق..." : 
                  attempts >= 5 ? `انتظري ${remainingTime} دقيقة` : 
-                 "افتح المفاجأة"}
+                 " بس تكتبي كلمت سر"}
               </Button>
             </form>
 
-            <p className="text-sm text-muted-foreground mt-6">
-              {getHint()}
-            </p>
+         
 
             {attempts >= 5 && (
               <div className="text-xs text-red-600 mt-4 space-y-2">
-                <p>⏳ تم تعطيل الدخول مؤقتًا لأسباب أمنية</p>
-                <p>يمكنك المحاولة مرة أخرى بعد: {remainingTime} دقيقة</p>
+             
               </div>
             )}
 
             <div className="text-xs text-gray-500 mt-4">
-              <p>⚠️ سيتم طلب كلمة المرور بعد كل إعادة تحميل</p>
-              <p>🔐 الجلسة صالحة لمدة 24 ساعة فقط</p>
+        
             </div>
           </div>
         </div>
